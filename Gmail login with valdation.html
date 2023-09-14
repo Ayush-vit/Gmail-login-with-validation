@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <center>
+        <form action="https://www.w3schools.com" onsubmit="return validate()" class="form m-5">
+            <table>
+                <tr>
+                    <td><p id="invalid-msg"></p></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><h3>Gmail login</h3></td>
+                </tr>
+                <tr>
+                    <td><input class="form-control my-2" id="un" type="text" placeholder="username" required/></td>
+                </tr>
+                <tr>
+                    <td><input class="form-control my-2" id="pwd" type="password" placeholder="password" required/></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><button type="submit" class="my-2 btn btn-primary">log in</button></td>
+                </tr>
+            </table>
+        </form>
+    </center>
+    <!--<input type="text" placeholder="username"/>
+    <input type="password" placeholder="password"/>-->
+    <script>
+        function validate()
+        {
+            var un=document.getElementById("un");
+            var pwd=document.getElementById("pwd");
+            //alert(un.length); // this will come as pop up and will display the username and password after login
+            //alert(pwd);  
+            if(un.length<5||pwd.length<5)
+            {
+                document.getElementById("invalid-msg").innerHTML=`<p class="alert-danger">invalid username or password</p>`;
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
